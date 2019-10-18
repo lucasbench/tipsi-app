@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Tipsi Login</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="reset.css">
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <main>
+            <div class="top-section">
+                <ul id="slides">
+                    <li class="slide showing"></li>
+                    <li class="slide"></li>
+                    <li class="slide"></li>
+                    <li class="slide"></li>
+                </ul>
+                <!--<div class="company-logo"><img src="logo.png" alt="tipsi" height="400px"></company-logo></div>-->
+                <h5>Welcome to TIPSI</h5>
+            </div>
+            <div class="bottom-section">
+                    <button onclick="document.getElementById('signUp').style.display='block'">SIGN UP</button>
+                    <div id="signUp" class="modal">
+                        <span onclick="document.getElementById('signUp').style.display='none'" class="close" title="Close Modal"></span>
+                            <form class="modal-content" action="/action_page.php">
+                                <div class="container">
+                                    <h1>SIGN UP</h1>                      
+                                    <hr>
+                                    <label for="email"><b>Email</b></label>
+                                        <input type="text" placeholder="Enter Email" name="email" required>
+                                    <label for="psw"><b>Password</b></label>
+                                        <input type="password" placeholder="Enter Password" name="psw" required>
+                                    <label for="psw-repeat"><b>Repeat Password</b></label>
+                                        <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
+                                    <label>
+                                        <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> <b> Remember me </b>
+                                    </label>
+                                        <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
+                                    <div class="clearfix">
+                                        <button type="submit" class="signup">Sign Up</button>
+                                        <button type="button" onclick="document.getElementById('signUp').style.display='none'" class="cancelbtn">Cancel</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                </div>
+        </main>
+        <script>
+            // give the slide container some functionality
+            var slides = document.querySelectorAll('#slides .slide');//get slides from container
+            var currentSlide = 0; // variable to keep track of current slide
+            var slideInterval = setInterval(nextSlide,2000); // show the next slide aftter 2 secs
+
+            function nextSlide() {
+                slides[currentSlide].className = 'slide'; // chenge slide class so doesn't show, css handles it
+                currentSlide = (currentSlide+1)%slides.length;
+                slides[currentSlide].className = 'slide showing';
+            }
+            //add one to the current slide, but we use the % operator to cycle back to zero if we’ve reached the end of the slides.
+            // As a quick reminder, the % operator divides two numbers and spits out the remainder. This is great for cases where you have to
+            // do math with cycles like a clock or a calendar. In this case, we have 5 slides, 
+            //so here’s what happens with each number: 1%5=1, 2%5=2, 3%5=3, 4%5=4, and 5%5=0.
+            //Once we have the new slide’s number, we change that slide’s class so that the slide is showing.
+            // Once again, our CSS opacity transition handles the fade effect automatically.
+
+            
+            // Get the modal
+            var modal = document.getElementById('signUp');
+
+            // When the user clicks anywhere outside of the modal, close it
+            window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,272 @@
+
+.top-section {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+h5,
+h1,
+p {
+    margin-top: 0;
+    color: rgb(16, 110, 95);
+    margin-bottom: 30px;
+    text-align: center;
+}
+p {
+    font-size: .7rem;
+}
+.bottom-section {
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+}
+/* Set a style for all buttons */
+button {
+    min-width: 150px;
+    height: 30px;
+    margin: 5px;
+    cursor: pointer;
+    border-radius: 20px;
+    background-color: rgb(16, 110, 95);
+    color: white;
+    border: 1px solid white;
+}
+button:hover {
+    opacity: 1;
+    background-color: rgba(16, 110, 94, 0.349);
+    color: rgba(16, 110, 94);;
+}
+/*Full-width input fields*/ 
+  input[type=text], input[type=password] {
+  width: 80%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+/* Add a background color when the inputs get focus */
+input[type=text]:focus, input[type=password]:focus {
+  background-color: rgba(16, 110, 94, 0.151);
+  outline: none;
+  
+}
+button:hover {
+  opacity:1;
+}
+/* Add padding to container elements */
+.container {
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+}
+label {
+    color: rgba(16, 110, 94, 0.712);
+}
+b { 
+    align-items: flex-start;
+}
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgba(16, 110, 94, 0.562);
+  padding-top: 50px;
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* Style the horizontal ruler */
+hr {
+  border: 1px solid rgb(16, 110, 95);
+  margin-bottom: 25px;
+}
+
+/* The Close Button (x) */
+.close {
+  position: absolute;
+  right: 35px;
+  top: 15px;
+  font-size: 40px;
+  font-weight: bold;
+  color: #f1f1f1;
+}
+
+.close:hover,
+.close:focus {
+  color: rgb(16, 110, 95);
+  cursor: pointer;
+}
+.clearfix { 
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* Change styles for cancel button and signup button on extra small screens */
+@media screen and (max-width: 300px) {
+  .cancelbtn, .signupbtn {
+    width: 100%;
+  }
+}
+.userIcon {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 20px;
+    opacity: .7;
+}
+.userIcon:hover{
+    opacity: .1;
+}
+* {
+    box-sizing: border-box;
+  }
+.nav {
+    height: 50px;
+    width: 100%;
+    background-color: rgba(16, 110, 94, 0.274);
+    position: relative;
+}
+  
+.nav > .nav-header {
+    display: inline;
+}
+.nav > .nav-btn {
+    display: none;
+}
+  
+.nav > .nav-links {
+    display: inline;
+    font-size: 14px;
+}
+  
+.nav > .nav-links > a {
+    display: inline-block;
+    padding: 13px 10px 13px 10px;
+    text-decoration: none;
+    color: rgb(16, 110, 95);
+}
+  
+.nav > .nav-links > a:hover {
+    background-color: rgba(16, 110, 94, 0.562);
+}
+  
+.nav > #nav-check {
+    display: none;
+}
+  
+@media (max-width:600px) {
+    .nav > .nav-btn {
+      display: inline-block;
+      position: absolute;
+      top: 0px;
+}
+.nav > .nav-btn > label {
+      display: inline-block;
+      width: 50px;
+      height: 50px;
+      padding: 13px;
+}
+.nav > .nav-btn > label:hover,.nav  #nav-check:checked ~ .nav-btn > label {
+      background-color: rgba(16, 110, 94, 0.562);
+}
+.nav > .nav-btn > label > span {
+      display: block;
+      width: 25px;
+      height: 10px;
+      border-top: 2px solid #eee;
+}
+.nav > .nav-links {
+      position: absolute;
+      display: block;
+      width: 30%;
+      background-color: rgba(16, 110, 94, 0.200);
+      height: 0px;
+      transition: all 0.3s ease-in;
+      overflow-y: hidden;
+      top: 50px;
+      left: 0px;
+}
+.nav > .nav-links > a {
+      display: block;
+      width: 100%;
+}
+.nav > #nav-check:not(:checked) ~ .nav-links {
+      height: 0px;
+}
+.nav > #nav-check:checked ~ .nav-links {
+      height: calc(100vh - 50px);
+      overflow-y: auto;
+}
+
+/*position the logo in the middle of page*/
+.company-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/*create the slideshow container */
+
+#slides {
+    position: relative;
+    height: 300px;
+    width: 300px;
+    padding: 0px;
+    margin: 20px;
+    list-style-type: none;
+    z-index: -1;
+}
+
+.slide {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    z-index: 1;
+
+    -webkit-transition: opacity 1s;
+    -moz-transition: opacity 1s;
+    -o-transition: opacity 1s;
+    transition: opacity 1s;
+}
+
+.showing {
+    opacity: 1;
+    z-index: 2;
+}
+/*give the slide container some images */
+.slide {
+    font-size: 40px;
+    padding: 40px;
+    box-sizing: border-box;
+    background: white;
+    color: #fff;
+}
+/* add images*/
+.slide:nth-of-type(1) {
+    background-image: url("tipsiLogo.png");
+}
+.slide:nth-of-type(2) {
+    background-image: url("posts.png");
+}
+.slide:nth-of-type(3) {
+    background-image: url("performance.png");
+}
+.slide:nth-of-type(4) {
+    background-image: url("moneySave.png");
+}
