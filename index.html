@@ -3,6 +3,7 @@
     <head>
         <title>Tipsi App</title>
         <meta charset="utf-8">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="reset.css">
         <link rel="stylesheet" href="styles.css">
@@ -12,7 +13,7 @@
         <main>
             <div class="nav">
                 <input type="checkbox" id="nav-check">
-                    <div class="nav-header"><div class="userIcon"><img src="user-avatar.png" style="height: 30px"></div></div>
+                    <div class="nav-header"><div class="userIcon"><img src="userIcon.PNG" style="height: 30px"></div></div>
                         <div class="nav-btn">
                           <label for="nav-check">
                             <span></span>
@@ -27,9 +28,26 @@
                           <a href="" target="_blank">Calendar</a>
                         </div>
                         <!--<div class="company-logo"><img src="logo.png" alt="tipsi" height="100px"></company-logo></div>-->
-                    </div>
-            
-                    
+                      </div>  
+            </div>
+            <div class="cards-container">
+            <div class="news-container">
+                <div class="posts-card">
+                  <div class="card-image"><img class="card-img" src="Wine.jpg"/></div>
+                  <div class="card-title"><strong>Lorem Ipsum</strong>
+                  <p class="card-para">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="tips-card">
+                <div class="tips-card__title">This week Tips</div>
+                <div class="tips-card__window">
+                    <input class="tips-input" type="number" placeholder="" name="tips" required>
+                </div>
+              </div> 
+              <div class="updates-card">
+
+              </div>
             </div>
         </main>
     </body>

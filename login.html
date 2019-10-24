@@ -4,6 +4,7 @@
         <title>Tipsi Login</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
         <script src="https://use.fontawesome.com/2cd012a339.js"></script>
         <link rel="stylesheet" href="reset.css">
         <link rel="stylesheet" href="styles.css">
@@ -13,14 +14,13 @@
             <div class="top-section">
                 <div class="slides-container">
                     <ul id="slides">
-                        <li class="slide showing"></li>
-                        <li class="slide"></li>
-                        <li class="slide"></li>
-                        <li class="slide"></li>
+                        <li class="slide showing"><p class="img-para">    CHECK YOUR TIPS ON THE GO!    </p></li>
+                        <li class="slide"><p class="img-para">      KEEP TRACK OF YOUR TIPS!     </p> </li>
+                        <li class="slide"> <p class="img-para"> SHARE STORIES & NEWS! </p></li>
+                        <li class="slide"> <p class="img-para">    IT'S EASY, IT'S TIPSY!    </p></li>
                     </ul>
                 </div>
                 <!--<div class="company-logo"><img src="logo.png" alt="tipsi" height="400px"></company-logo></div>-->
-                <h5>Welcome to TIPSI</h5>
             </div>
             <div class="bottom-section">
                     <button onclick="document.getElementById('signUp').style.display='block'">SIGN UP</button>
@@ -74,7 +74,7 @@
                             </label>
                             </div>
 
-                            <div class="container">
+                            <div class="container" style="background-color:#f1f1f1">
                             <button type="button" onclick="document.getElementById('login').style.display='none'" class="cancelbtn">Cancel</button>
                             <span class="psw">Forgot <a href="#">password?</a></span>
                             </div>
@@ -99,7 +99,7 @@
             // give the slide container some functionality
             var slides = document.querySelectorAll('#slides .slide');//get slides from container
             var currentSlide = 0; // variable to keep track of current slide
-            var slideInterval = setInterval(nextSlide,2000); // show the next slide aftter 2 secs
+            var slideInterval = setInterval(nextSlide,3000); // show the next slide aftter 2 secs
 
             function nextSlide() {
                 slides[currentSlide].className = 'slide'; // chenge slide class so doesn't show, css handles it
