@@ -35,7 +35,14 @@ var tipsTotal = team.reduce(function(prev, cur) {
 }, 0);
 console.log('your total tips are', tipsTotal);// should return 1500
 
+// create a function that counts the points
+var pointsTotal = team.reduce(function(prev, cur) {
+    return prev + cur.points;
+}, 0);
+console.log('today total points are', pointsTotal);// should return 32
 
-//create a function that return how much team member makes out of total money
 
+//create a var that returns how much a team member makes out of each point
 
+var pointValue = (tipsTotal/pointsTotal);
+console.log(pointValue);
