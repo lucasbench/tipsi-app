@@ -33,38 +33,59 @@ var team = [
 var tipsTotal = team.reduce(function(prev, cur) {
     return prev + cur.tips;
 }, 0);
-console.log('your total tips are', tipsTotal);// should return 1500
+//display the tips 
+var listItem = document.createElement('li');
+listItem.innerHTML = 'Today Total Tips are $ : ' + tipsTotal;
+        
+var list = document.getElementById('tips-window');
+list.appendChild(listItem);
+//console.log('your total tips are', tipsTotal);// should return 1500
 
 // create a function that counts the points
 var pointsTotal = team.reduce(function(prev, cur) {
     return prev + cur.points;
 }, 0);
-console.log('today total points are', pointsTotal);// should return 32
+// display the amount of points
+var listItem = document.createElement('li');
+listItem.innerHTML = 'The Shift Total Points are : ' + pointsTotal;
+            
+var list = document.getElementById('tips-window');
+list.appendChild(listItem);
+//console.log('today total points are', pointsTotal);// should return 32
 
 
 //create a var that returns how much a team member makes out of each point
 
 var pointValue = (tipsTotal/pointsTotal);
-console.log('the point is $' , pointValue); // returns 46.875
+console.log('the point is $' , pointValue);// returns 46.875
 
-// find out how much each team member makes
-// var yourTips = (pointsTotal*pointValue);
-// console.log('today you made' , yourTips)
+var listItem = document.createElement('li');
+listItem.innerHTML = 'The Point Value is $ : ' + pointValue;            
+
+var list = document.getElementById('tips-window');
+list.appendChild(listItem);
+
+
 //  create a function that calculate the tips each team member makes.(name, tips) forEach?
-    
-    //document.getElementById("tips").innerHTML = tipsPerMemberOfTeam;
- 
-    function tipsPerMemberOfTeam (name, tips) {
+function tipsPerMemberOfTeam (name, tips) {
         
-        for (var i = 0; i < team.length; i++){
-            console.log( 'Hi ' + team[i].name + ' today you made $ ' + team[i].points*(pointValue)); 
-            }
-            
+    for (var i = 0; i < team.length; i++){
+        var item = team[i];
+        
+        //console.log( 'Hi ' + team[i].name + ' today you made $ ' + team[i].points*(pointValue)); 
         }
-    tipsPerMemberOfTeam(name);
+        var listItem = document.createElement('li');
+        listItem.innerHTML =  'your total tips are $ : ' + item.points*(pointValue);
+    
+        var list = document.getElementById('tips-window');
+        list.appendChild(listItem);
+        
+    }
+tipsPerMemberOfTeam(name); 
 
+//document.getElementById("tips").innerHTML = tipsPerMemberOfTeam;
 // create a function that add users to the array onclick
 // function addUser() {
-//     team.push(document.getElementById("tips-input"));
+//     team.push(document.getElementById("signUp"));
 //     console.log(team);
 // }
