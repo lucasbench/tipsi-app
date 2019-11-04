@@ -202,7 +202,7 @@ b {
       display: block;
       width: 25px;
       height: 10px;
-      border-top: 2px solid #eee;
+      border-top: 2px solid rgba(59, 58, 58, 0.644);
 }
 .nav > .nav-links {
       position: absolute;
@@ -274,16 +274,16 @@ b {
 }
 /*give the slide container some images */
 .slide:nth-of-type(1) {
-    background-image: url('userIcon.PNG');
+    background-image: url('../assets/userIcon.png');
 }
 .slide:nth-of-type(2) {
-    background-image: url('dollarLogo.png');
+    background-image: url('../assets/dollarLogo.png');
 }
 .slide:nth-of-type(3) {
-    background-image: url('postsBW.png');
+    background-image: url('../assets/postsBW.png');
 }
 .slide:nth-of-type(4) {
-    background-image: url('logO.png');
+    background-image: url('../assets/logO.png');
 }
 .img-para{
     height: 45px;
@@ -387,9 +387,9 @@ b {
     padding-top: 30px;
 }
 .tips-input{
+    display: flex;
+    flex-direction: column;
     font-size: 14px;
-    height: 30px;
-    max-width: 70px;
     background-color: white;
     text-align: center;
 }

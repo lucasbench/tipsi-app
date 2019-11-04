@@ -48,14 +48,23 @@ var pointValue = (tipsTotal/pointsTotal);
 console.log('the point is $' , pointValue); // returns 46.875
 
 // find out how much each team member makes
-var yourTips = (pointsTotal*pointValue);
-console.log('today you made' , yourTips);
-
+// var yourTips = (pointsTotal*pointValue);
+// console.log('today you made' , yourTips)
 //  create a function that calculate the tips each team member makes.(name, tips) forEach?
-function tipsPerMemberOfTeam (name, tips) {
-    var i = 0;
-    for (i = 0; i < team.length; i++){
-        return team[i].name + team[i].points*(pointValue); 
+    
+    //document.getElementById("tips").innerHTML = tipsPerMemberOfTeam;
+ 
+    function tipsPerMemberOfTeam (name, tips) {
+        
+        for (var i = 0; i < team.length; i++){
+            console.log( 'Hi ' + team[i].name + ' today you made $ ' + team[i].points*(pointValue)); 
+            }
+            
         }
-    }
-tipsPerMemberOfTeam( name , tips);
+    tipsPerMemberOfTeam(name);
+
+// create a function that add users to the array onclick
+// function addUser() {
+//     team.push(document.getElementById("tips-input"));
+//     console.log(team);
+// }
