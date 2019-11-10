@@ -85,7 +85,28 @@ tipsPerMemberOfTeam(name);
 
 //document.getElementById("tips").innerHTML = tipsPerMemberOfTeam;
 // create a function that add users to the array onclick
-// function addUser() {
-//     team.push(document.getElementById("signUp"));
-//     console.log(team);
-// }
+var newMember = [];
+var returnMember;
+
+function begin() {
+    var member = team[{}];
+    var i = newMember.length;
+
+    if (newMember.length === 0) {
+        member = "Field is empty";
+    }
+
+    document.getElementById('message2').innerHTML = member;
+    while (i--) {
+        document.getElementById('message').innerHTML = newMember[i] + "<br/>" + document.getElementById('message').innerHTML;
+    }
+    function newMember() {
+        returnMember = document.getElementById('userinput').value;
+        newMember.push(returnMember);
+    }
+}
+
+function newMember() {
+    returnMember = document.getElementById('userinput').value;
+    newMember.push(returnMember);
+}

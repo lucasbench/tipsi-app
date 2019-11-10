@@ -59,7 +59,7 @@
                         <!-- Modal Content -->
                         <form class="modal-content animate" action="/action_page.php">
                             <div class="imgcontainer">
-                            <img src="user-avatar.png" alt="Avatar" class="avatar" style="height: 100px">
+                            <img src="../tipsi-app/assets/userIcon.png" alt="Avatar" class="avatar" style="height: 100px">
                             </div>
 
                             <div class="container">
@@ -101,7 +101,6 @@
             var slides = document.querySelectorAll('#slides .slide');//get slides from container
             var currentSlide = 0; // variable to keep track of current slide
             var slideInterval = setInterval(nextSlide,3000); // show the next slide aftter 2 secs
-
             function nextSlide() {
                 slides[currentSlide].className = 'slide'; // chenge slide class so doesn't show, css handles it
                 currentSlide = (currentSlide+1)%slides.length;
@@ -113,11 +112,8 @@
             //so here’s what happens with each number: 1%5=1, 2%5=2, 3%5=3, 4%5=4, and 5%5=0.
             //Once we have the new slide’s number, we change that slide’s class so that the slide is showing.
             // Once again, our CSS opacity transition handles the fade effect automatically.
-
-
             // Get the modal
             var modal = document.getElementById('signUp','login');
-
             // When the user clicks anywhere outside of the modal, close it
             window.onclick = function(event) {
             if (event.target == modal) {
