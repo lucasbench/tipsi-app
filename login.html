@@ -1,14 +1,15 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="en">
     <head>
-        <title>Tipsi Login</title>
+        <title>Tipsi Login</title>  
         <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
-        <script src="https://use.fontawesome.com/2cd012a339.js"></script>
         <link rel="stylesheet" href="css/reset.css">
         <link rel="stylesheet" href="css/styles.css">
-        <script src="js/script.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/live/3.1/firebase.js"></script>
+        <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+        <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
     </head>
     <body>
         <main>
@@ -21,81 +22,25 @@
                         <li class="slide"> <p class="img-para">    IT'S EASY, IT'S TIPSY!    </p></li>
                     </ul>
                 </div>
-                <!--<div class="company-logo"><img src="logo.png" alt="tipsi" height="400px"></company-logo></div>-->
+               
             </div>
-            <div class="bottom-section">
-                    <button onclick="document.getElementById('signUp').style.display='block'">SIGN UP</button>
-                    <div id="signUp" class="modal">
-                        <span onclick="document.getElementById('signUp').style.display='none'" class="close" title="Close Modal">&times;</span>
-                            <form class="modal-content animate" action="/action_page.php">
-                                <div class="container">
-                                    <h1>SIGN UP</h1>                      
-                                    <hr>
-                                    <label for="email"><b>Email</b></label>
-                                        <input type="text" placeholder="Enter Email" name="email" required>
-                                    <label for="psw"><b>Password</b></label>
-                                        <input type="password" placeholder="Enter Password" name="psw" required>
-                                    <label for="psw-repeat"><b>Repeat Password</b></label>
-                                        <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
-                                    <label>
-                                        <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> <b> Remember me </b>
-                                    </label>
-                                        <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
-                                    <div class="clearfix">
-                                        <button type="submit" class="signup">Sign Up</button>
-                                        <button type="button" onclick="document.getElementById('signUp').style.display='none'" class="cancelbtn">Cancel</button>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                        <!-- Button to open the modal login form -->
-                        <button onclick="document.getElementById('login').style.display='block'">Login</button>
+         <div class="bottom-section">
+                <div class="signIn-container">
+                    <input id="txtEmail" type="email" placeholder="Email">
 
-                        <!-- The Modal -->
-                        <div id="login" class="modal">
-                        <span onclick="document.getElementById('login').style.display='none'"
-                        class="close" title="Close Modal">&times;</span>
+                    <input id="txtPassword" type="password" placeholder="Password">
 
-                        <!-- Modal Content -->
-                        <form class="modal-content animate" action="/action_page.php">
-                            <div class="imgcontainer">
-                            <img src="../tipsi-app/assets/userIcon.png" alt="Avatar" class="avatar" style="height: 100px">
-                            </div>
+                    <button id="btnLogin" class="btn btn-secondary">Log in</button>
 
-                            <div class="container">
-                            <label for="uname"><b>Username</b></label>
-                            <input type="text" placeholder="Enter Username" name="uname" required>
+                    <button id="btnSignUp" class="btn btn-action">Sign Up</button>
 
-                            <label for="psw"><b>Password</b></label>
-                            <input type="password" placeholder="Enter Password" name="psw" required>
-
-                            <button type="submit">Login</button>
-                            <label>
-                                <input type="checkbox" checked="checked" name="remember"> Remember me
-                            </label>
-                            </div>
-
-                            <div class="container" style="background-color:#f1f1f1">
-                            <button type="button" onclick="document.getElementById('login').style.display='none'" class="cancelbtn">Cancel</button>
-                            <span class="psw">Forgot <a href="#">password?</a></span>
-                            </div>
-                        </form>
-                    </div>
-                    <span class="ol-innertext">or use</span>
-                        <div class="col">
-                            <a href="#" class="fb btn">
-                                <i class="fa fa-facebook fa-fw"></i> Facebook
-                            </a>
-                            <a href="#" class="twitter btn">
-                                <i class="fa fa-twitter fa-fw"></i> Twitter
-                            </a>
-                            <a href="#" class="google btn">
-                                <i class="fa fa-google fa-fw"></i> Google+
-                            </a>
-                        </div>
-                    
+                    <button id="btnLogout" class="btn btn-action hide">Log Out</button>
                 </div>
-            </main>
+        </div>
+     </main>
+     <script src="js/firebase.js"></script>
+     <script src="js/script.js"></script>
+        
             <script>
             // give the slide container some functionality
             var slides = document.querySelectorAll('#slides .slide');//get slides from container
@@ -120,6 +65,7 @@
                 modal.style.display = "none";
             }
             }
-            </script>
+            </script> 
+            
     </body>
 </html>
