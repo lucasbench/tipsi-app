@@ -1,4 +1,9 @@
-
+main {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: 0 auto;
+}
 .top-section {
     margin-bottom: 50px;
     align-items: center;
@@ -30,7 +35,7 @@ button {
 }
 button:hover {
     opacity: 1;
-    background-color: rgba(3, 3, 3, 0.349);
+    background-color: rgba(199, 194, 194, 0.5);
     color: rgba(7, 7, 7, 0.918);;
 }
 .hide {
@@ -43,8 +48,8 @@ button:hover {
   margin-top: 5px;
   margin-bottom: 5px;
   display: inline-block;
-  border: none;
-  background: #f1f1f1;
+  border: 1px solid black;
+  border-radius: 20px;
 }
 /* Add a background color when the inputs get focus */
 input[type=text]:focus, input[type=password]:focus {
@@ -132,7 +137,7 @@ b {
 }
 /* Change styles for cancel button and signup button on extra small screens */
 @media screen and (max-width: 300px) {
-  .cancelbtn, .signupbtn {
+    .cancelbtn, .signupbtn {
     width: 100%;
   }
 }
@@ -338,6 +343,7 @@ b {
 }
 .cards-container {
     flex-wrap: wrap;
+    justify-content: center;
 }
 .news-container {
     display: flex;
@@ -356,18 +362,16 @@ b {
     align-items: center;
     overflow: hidden;
     height: 200px;
+    justify-content: center;
 }
 .tips-card {
     width: 100%;
-    background-color: rgba(153, 152, 152, 0.384);
     display: flex;
     flex-direction: column;
 }
 .tips-card__title{
     padding: 12px;
-    background-color: black;
     text-align: center;
-    color: white;
 }
 .card-title{
     justify-content: center;
@@ -396,13 +400,19 @@ b {
     padding: 10px;
 }
 #tips-window li {
+    margin-left: 5px;
     padding: 2px;
     display: flex;
-    border: 1px solid rgba(255, 255, 255, 0.548);
+    border: 1px solid black;
+    text-align: center;
     
 }
 .signIn-container {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+.logout-button-container {
+    display: flex;
+    justify-content: center;
 }

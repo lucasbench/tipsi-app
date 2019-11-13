@@ -33,7 +33,7 @@
             <div class="cards-container">
             <div class="news-container">
                 <div class="tips-card">
-                    <div class="tips-card__title">This week Tips</div>
+                    <div class="tips-card__title">Today's Tips</div>
                     <div class="tips-card__window">
                         <ul id="tips-window"></ul>
                     </div>
@@ -50,9 +50,25 @@
 
               </div>
             </div>
+            <div class="logout-button-container">
+            <button id="btnLogout" onclick="logout()"  class="btn btn-action">Log Out</button>
+          </div>
         </main>
         
         <script src="js/script.js"></script>
+        <script>
+          btnLogout.addEventListener('click', e => {
+          firebase.auth().signOut();
+          });
+          function logout(){
+          
+          window.open("login.html");
+          if (firebaseUser === btnLogout) {
+            console.log('you are logged out');
+          }
+          };
+          
+        </script>
      
     </body>
 </html>
