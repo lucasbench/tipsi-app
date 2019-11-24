@@ -34,32 +34,27 @@
             </div>
             <div class="cards-container">
             <div class="news-container">
-                <div class="tips-card">
-                    <div class="tips-card__title">Today's Tips</div>
-                    <div class="tips-card__window">
-                        <ul id="tips-window"></ul>
-                    </div>
-                </div> 
+                <div class="teamMembers"></div>
                 <button id="newUserBtn">add Member</button>
                 <div id="myModal" class="modal">
                   <div class="modal-content">
                   <!--CREATE MODAL TO INPUT DATA NOT A BUTTON-->
-                  <form>
-                    <input id="userName" type="text" placeholder="Name"/>
-                    <input id="userTips"  type="text" class="input" value="0" onchange="updateTotal()" placeholder="Tips"/>
-                    <input id="userPoints"  type="text" class="input" value="0" onchange="updateTotal()" placeholder="Points"/>
-                    <input name="total" type="text" id="total" value="">
-                    <input type="button" value="Save Info" class="saveInfo" onclick="insert()"/>
-                  </form>
-                  <div id="display"></div>
+                        <form>
+                            <input id="userName" type="text" placeholder="Name"/>
+                            <input id="userTips"  type="text" class="input" value="0" onchange="updateTotal()" placeholder="Tips"/>
+                            <input id="userPoints"  type="text" class="input" value="0" onchange="updateTotal()" placeholder="Points"/>
+                            <input name="total" type="text" id="total" value="">
+                            <input type="button" value="Save Info" class="saveInfo" onclick="insert()"/>
+                        </form>
+                        <div id="display"></div>
+                    </div>
                 </div>
-              </div>
-                <div class="posts-card">
-                  <div class="card-image"><img class="card-img" src="assets/Wine.jpg"/></div>
-                  <div class="card-title"><strong>Lorem Ipsum</strong>
-                  <p class="card-para">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-                  </div>
-                </div>
+                <!--Value-->
+                <pre id="object">
+
+                </pre>
+                <!--Child-->
+                
               </div>
               
               <div class="updates-card">

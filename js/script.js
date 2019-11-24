@@ -1,14 +1,9 @@
-// create function that receives 2 parameters (team member name, moneyTotal) 
-// the function should return how much team member makes out of total money
-// if the name doesn't exist in array return zero
-
 
 // get the modal
 var modal = document.getElementById("myModal");
 //get the button that opens the modal
 var btn = document.getElementById("newUserBtn");
-//get the <span> element that closes the modal
-var span = document.getElementById("close");
+
 //when the user clicks on the btn , open modal
 btn.onclick = function () {
     modal.style.display = "block";
@@ -23,47 +18,80 @@ window.onclick = function (event) {
         modal.style.display = "none";
     }
 }
-var team = [{
-    name:'',
-    tips:'',
-    points:''
-}];
+//creatre an array of user name , tips, points
 
-function teamMember (name, tips, points) {
-    this.name = name;
-    this.tips = tips;
-    this.points = points;
-}
-//document.getElementById("newUserBtn").addEventListener('click', );
-document.getElementById('newUser-name').addEventListener('click', addTeamMember.selectName);
-document.getElementById('newUser-tips').addEventListener('click', addTeamMember.selectTips);
-document.getElementById('newUser-points').addEventListener('click', addTeamMember.selectPoimts);
-document.getElementById('addInfo').addEventListener('click', tipsPerMemberOfTeam);
+var names = [];
+var tips = [];
+var points = [];
 
-function addTeamMember () {
-    var selectName = '';
-    var selectTips = '';
-    var selectPoints = '';
-    var currentTeamMember = new teamMember(selectName, selectTips, selectPoints);
-    console.log(currentTeamMember);
-    console.log(team);
-    return team.push(currentTeamMember);
+var User = {};
+var team = [];
+ 
+//get the input fields from DOM
+
+
+
+
+// get the reference to the display div
+var messageBox = document.getElementById('display');
+//create a function that gets the values of eacxh input field, once done it calls the cleaAndShow function
+function insert() {
+
+    var nameInput = document.getElementById('userName');
+    var tipsInput = document.getElementById('userTips');
+    var pointsInput = document.getElementById('userPoints');
+
+
+    User.name = nameInput.value;
+    User.tips = tipsInput.value;
+    User.points = pointsInput.value;
+    team.push(User);
+    for(var i = 0; i < team.length; i++){
+        alert(team[i].name + team[i].tips + team[i].points);
+    }
 }
-// create a function that counts the tips
-var tipsTotal = team.reduce(function(prev, cur) {
-    return prev + cur.selectTips;
-}, 0);
+
+//create a function that clears the display after each time insert is completed
+function clearAndShow() {
+    nameInput.value = " ";
+    tipsInput.value = " ";
+    pointsInput.value = " ";
+
+    messageBox.innerHTML = " ";
+
+    messageBox.innerHTML += "name: " + names.join (", ") + "<br/>";
+    messageBox.innerHTML += "tips: " + tips.join (", ") + "<br/>"
+    messageBox.innerHTML += "points: " + points.join (", ");
+
+}
+
+function updateTotal() {
+    var total = 0;
+    var list = document.getElementsByClassName("input");
+    var values = [];
+    for(var i = 0; i < list.length; ++i) {
+        values.push(parseFloat(list[i].value));
+    }
+    total = values.reduce(function(previousValue, currentValue, index, array){
+        return previousValue + currentValue;
+    });
+    document.getElementById("total").value = total;    
+}
+
 //display the tips 
+var tipsTotal = team.reduce(function(prev, cur) {
+    return prev + cur.tips;
+}, 0);
+
 var listItem = document.createElement('li');
 listItem.innerHTML = 'Today Total Tips are $ : ' + tipsTotal;
         
 var list = document.getElementById('tips-window');
 list.appendChild(listItem);
- 
 
 // create a function that counts the points
 var pointsTotal = team.reduce(function(prev, cur) {
-    return prev + cur.selectPoints;
+    return prev + cur.points;
 }, 0);
 // display the amount of points
 var listItem = document.createElement('li');
@@ -72,11 +100,10 @@ listItem.innerHTML = 'The Shift Total Points are : ' + pointsTotal;
 var list = document.getElementById('tips-window');
 list.appendChild(listItem);
 
-
 //create a var that returns how much a team member makes out of each point
 
 var pointValue = (tipsTotal/pointsTotal);
-console.log('the point is $' , pointValue);// returns 46.875
+//console.log('the point is $' , pointValue); // returns 46.875
 
 var listItem = document.createElement('li');
 listItem.innerHTML = 'The Point Value is $ : ' + pointValue;            
@@ -84,19 +111,21 @@ listItem.innerHTML = 'The Point Value is $ : ' + pointValue;
 var list = document.getElementById('tips-window');
 list.appendChild(listItem);
 
-
 //  create a function that calculate the tips each team member makes.(name, tips) forEach?
-function tipsPerMemberOfTeam () {
-        
-    for (var i = 0; i < team.length; i++){
-        
-        var item = team[i].selectPoints;
-        }
-        var listItem = document.createElement('li');
-        listItem.innerHTML =  'your total tips are $ : ' + item*(pointValue);
-    
-        var list = document.getElementById('tips-window');
-        list.appendChild(listItem);
-        
-    }
-//tipsPerMemberOfTeam(selectPoints); 
+ 
+function tipsPerMemberOfTeam (name, tips, points) {
+        nameInput = name;
+        tipsInput = tips;
+        pointsInput = points;
+
+        for (var i = 0; i < team.length; i++){
+            var listItem = document.createElement('li');
+            listItem.innerHTML = 'Today you made $ : ' + team[i].points*(pointValue);            
+
+            var list = document.getElementById('tips-window');
+            list.appendChild(listItem);
+        } 
+            //return ( 'Hi ' + team[i].name + ' today you made $ ' + team[i].points*(pointValue)); 
+            
+        }            
+tipsPerMemberOfTeam(tips);

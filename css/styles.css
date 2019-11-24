@@ -26,7 +26,7 @@ p {
 }
 /* Set a style for all buttons */
 button {
-    min-width: 100px;
+    max-width: 100px;
     height: 30px;
     margin: 5px;
     cursor: pointer;
@@ -42,7 +42,10 @@ button:hover {
     display: none;
 }
 /*Full-width input fields*/ 
-  input[type=text], input[type=password], input[type=email] {
+  input[type=text], 
+  input[type=password], 
+  input[type=number],
+  input[type=email] {
   width: 100%;
   padding: 15px;
   margin-top: 5px;
@@ -52,7 +55,10 @@ button:hover {
   border-radius: 20px;
 }
 /* Add a background color when the inputs get focus */
-input[type=text]:focus, input[type=password]:focus {
+input[type=text]:focus,
+input[type=email]:focus,
+input[type=number]:focus, 
+input[type=password]:focus {
   background-color: rgba(150, 148, 148, 0.562);
   outline: none;
   
@@ -96,7 +102,6 @@ b {
 .modal-content {
     display: flex;
     flex-direction: column;
-    background-color: #fefefe;
     margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
     width: 80%; /* Could be more or less, depending on screen size */
 }
@@ -416,34 +421,20 @@ b {
     display: flex;
     justify-content: center;
 }
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(165, 42, 42, 0.466);
-    background-color: rgba(60, 60, 68, 0.568);
-}
-.newUser-container {
-    background-color: rgba(0, 0, 0, 0.411);
-    margin: 15% auto;
-    padding: 20px;
+.saveInfo {
     border: 1px solid black;
-    width: 80%;
-}
-.close {
-    color: black;
-    float: right;
     font-size: 20px;
-    font-weight: bold;
+    background: rgba(240, 238, 235, 0.726);
+    border-radius: 20px;
 }
-.close:hover,
-.close:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
+.saveInfo:hover {
+    background-color: rgba(240, 238, 235, 0.253); ;
+}
+#display {
+    background-color: white;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+    padding: 10px;
 }

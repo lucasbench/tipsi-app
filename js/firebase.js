@@ -60,32 +60,18 @@
       }
       
     });
+    //get elements
+    const preObject = document.getElementById('object');
+
+    //create references db= database
+    const dbRefObject = firebase.database().ref().child('object');
+
+    //Sync Object chenges
+    dbRefObject.on('value', snap => {
+      preObject.innerHTML = JSON.stringify(snap.val(), null, 3);
+    });
+
 
 }());
 
-
-
-
-// function to send email notification  once user sign up
-
-var functions = require('firebase-functions')
-var mailgun = require('mailgun-js')({apiKey, domain})
-exports.sendWelcomeEmail = functions.database.ref('users/{uid}').onWrite(event => {
-  // only trigger for new users [event.data.previous.exists()]
-  // do not trigger on delete [!event.data.exists()]
-  if (!event.data.exists() || event.data.previous.exists()) {
-    return
-  }
-  var user = event.data.val()
-  var {email} = user
-  var data = {
-    from: 'michelotto.luca@gmail.com',
-    subject: 'Welcome!',
-    html: `<p>Welcome! ${user.name}</p>`,
-    'h:Reply-To': 'michelotto.luca@gmail.com',
-    to: email
-  }
-  mailgun.messages().send(data, function (error, body) {
-    console.log(body)
-  })
-})
+ 
